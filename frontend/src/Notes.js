@@ -10,12 +10,12 @@ export default function Notes() {
 
   useEffect(() => {
     if (!role) { nav("/"); return; }
-    fetch("http://127.0.0.1:5000/notes").then(r => r.json()).then(setNotes).catch(() => {});
+    fetch("/notes").then(r => r.json()).then(setNotes).catch(() => {});
   }, [nav, role]);
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this note?")) return;
-    await fetch(`http://127.0.0.1:5000/notes/${id}`, { method: "DELETE" });
+    await fetch(`/notes/${id}`, { method: "DELETE" });
     setNotes(notes.filter(n => n.id !== id));
   };
 
@@ -51,7 +51,7 @@ export default function Notes() {
                 </p>
                 <div style={{ display: "flex", gap: 8 }}>
                   {note.filename && (
-                    <a href={`http://127.0.0.1:5000/download/${note.filename}`}
+                    <a href={`/download/${note.filename}`}
                       className="btn btn-primary btn-sm" style={{ textDecoration: "none" }}>
                       ⬇ Download
                     </a>

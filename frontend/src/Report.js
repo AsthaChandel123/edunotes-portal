@@ -10,7 +10,7 @@ export default function Report() {
 
   useEffect(() => {
     if (!role) { nav("/"); return; }
-    fetch("http://127.0.0.1:5000/report").then(r => r.json()).then(setReport).catch(() => {});
+    fetch("/report").then(r => r.json()).then(setReport).catch(() => {});
   }, [nav, role]);
 
   return (

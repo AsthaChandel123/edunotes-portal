@@ -13,9 +13,9 @@ export default function Dashboard() {
     if (!role) { nav("/"); return; }
     // Fetch some stats
     Promise.all([
-      fetch("http://127.0.0.1:5000/notes").then(r => r.json()),
-      fetch("http://127.0.0.1:5000/attendance").then(r => r.json()),
-      fetch("http://127.0.0.1:5000/students").then(r => r.json())
+      fetch("/notes").then(r => r.json()),
+      fetch("/attendance").then(r => r.json()),
+      fetch("/students").then(r => r.json())
     ]).then(([notes, attendance, students]) => {
       setStats({ notes: notes.length, attendance: attendance.length, students: students.length });
     }).catch(() => {});

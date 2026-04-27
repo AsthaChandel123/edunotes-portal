@@ -24,8 +24,8 @@ export default function Attendance() {
   const loadData = async () => {
     try {
       const [attRes, studRes] = await Promise.all([
-        fetch("http://127.0.0.1:5000/attendance").then(r => r.json()),
-        fetch("http://127.0.0.1:5000/students").then(r => r.json())
+        fetch("/attendance").then(r => r.json()),
+        fetch("/students").then(r => r.json())
       ]);
       setRecords(attRes);
       setStudents(studRes);
@@ -52,7 +52,7 @@ export default function Attendance() {
   const saveAttendance = async () => {
     if (!newDate || !newSubject) { setMsg("Please select date and subject"); return; }
     try {
-      await fetch("http://127.0.0.1:5000/attendance", {
+      await fetch("/attendance", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ date: newDate, subject: newSubject, records: localAttendance })
@@ -65,7 +65,7 @@ export default function Attendance() {
 
   // Teacher: edit existing record
   const editRecord = (date, subject, studentId, newStatus) => {
-    fetch("http://127.0.0.1:5000/attendance", {
+    fetch("/attendance", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ date, subject, studentId, status: newStatus })
