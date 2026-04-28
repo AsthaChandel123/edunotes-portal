@@ -253,5 +253,11 @@ function getSmartReply(message) {
   return "🤔 Interesting question! I can help with Math, Science, Programming, Study tips & Portal navigation. Could you tell me more about what you need?";
 }
 
+// Serve Frontend Build
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`));

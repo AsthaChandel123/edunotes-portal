@@ -1,8 +1,13 @@
 {
-  "dependencies": {
-    "chart.js": "^4.5.1",
-    "dotenv": "^17.4.2",
-    "openai": "^6.34.0",
-    "react-chartjs-2": "^5.3.1"
+  "name": "edunotes-portal",
+  "version": "1.0.0",
+  "description": "Premium Educational Portal",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

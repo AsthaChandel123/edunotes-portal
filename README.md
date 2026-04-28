@@ -1,6 +1,9 @@
 # 📘 EduNotes Portal
 
-A premium, role-based educational portal designed for students and teachers. Featuring a modern dark-themed UI, real-time attendance tracking, secure notes sharing, and an intelligent study assistant powered by **Google Gemini 3.1 Flash Preview**.
+A premium, role-based educational portal designed for students and teachers. Featuring a modern Apple VisionOS theme, real-time attendance tracking, secure notes sharing, and an intelligent study assistant powered by **Google Gemini 3.1 Flash Preview**.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/AsthaChandel123/edunotes-portal)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/AsthaChandel123/edunotes-portal/master)
 
 ## ✨ Features
 
